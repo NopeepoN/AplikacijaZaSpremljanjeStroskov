@@ -1,0 +1,22 @@
+# Node.js in React
+**/node_modules/
+**/dist/
+
+# Spring Boot in Maven
+**/target/
+
+# Okoljske spremenljivke in gesla
+.env
+.env.*
+!.env.example
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Visual Studio Code
+.vscode/
+
+# Sistemske datoteke
+.DS_Store
+Thumbs.db
