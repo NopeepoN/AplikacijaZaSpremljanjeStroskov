@@ -14,16 +14,16 @@ Projekt je razdeljen na backend in frontend.
 
 Backend:
 *Java 21 - programski jezik
-*Spring Boot - ogrodje za razvoj backend aplikacije
-*Spring Data JPA - povezava in delo s podatkovno bazo
-*Maven - upravljanje odvisnosti in gradnja projekta
+*Spring Boot 4.1.1 - ogrodje za razvoj backend aplikacije
+*Spring Data JPA 3.1.1- povezava in delo s podatkovno bazo
+*Maven 3.10 - upravljanje odvisnosti in gradnja projekta
 
 Frontend:
 *JavaScript - programski jezik
 *React - knjižnica za izdelavo uporabniškega vmesnika
 *Vite - ogrodje za razvoj in zaganjanje frontend aplikacije
 *HTML in CSS - struktura in oblikovanje uporabniškega vmesnika
-*Node.js - izvajanje in upravljanje paketov
+*Node.js v23.11.0 in nmp 10.9.2 - izvajanje in upravljanje paketov
 
 Podatkovna baza
 *PostgreSQL - relacijska podatkovna baza
