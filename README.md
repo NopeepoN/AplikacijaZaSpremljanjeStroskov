@@ -87,8 +87,102 @@ Ostalo:
 *.gitignore – določa datoteke, ki se ne vključujejo v Git repozitorij.
 *README.md – vsebuje dokumentacijo projekta.
 
-Navodila za nameščanje in zagon: 
+4.Navodila za nameščanje in zagon:
 
-Navodila za razvijalce:
+4.1 Predpogoji
+Za pravilno delovanje projekta potrebujemo:
+*Java JDK 21
+*Node.js in npm
+*PostgreSQL
+*Visual Studio Code ali drugo razvojno okolje
+*Git
 
-Standardi kodiranja.
+4.2 Nastavitev podatkovne baze
+Namestimo PostgreSQL.
+Zaženemo PostgreSQL strežnik.
+Ustvarimo podatkovno bazo z imenom stroski_db.
+Pripravimo uporabniško ime in geslo za dostop do podatkovne baze.
+
+4.3 Konfiguracija backenda
+V datoteki backend/src/main/resources/application.properties nastavimo:
+
+spring.application.name=stroski
+spring.datasource.url=jdbc:postgresql://localhost:5432/stroski_db
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.open-in-view=false
+
+Okoljski spremenljivki nastavimo v PowerShellu:
+
+$env:DB_USERNAME = "postgres"
+$env:DB_PASSWORD = "poljubno_geslo"
+
+4.4 Zagon backenda
+V PowerShellu odpremo mapo backend:
+
+cd backend
+
+Nato zaženemo aplikacijo:
+
+.\mvnw.cmd spring-boot:run
+
+Backend je privzeto dostopen na naslovu http://localhost:8080
+
+4.5 Namestitev in zagon frontenda
+
+Odpremo nov terminal in vstopimo v mapo frontend:
+
+cd frontend
+
+Namestimo potrebne pakete:
+
+npm install
+
+Zaženemo frontend aplikacijo:
+
+npm run dev
+
+Frontend je običajno dostopen na naslovu http://localhost:5173
+
+5.Navodila za razvijalce:
+Projekt uporablja Git in GitHub za upravljanje izvorne kode ter sodelovanje med razvijalci.
+
+Pridobitev projekta
+
+git clone https://github.com/NopeepoN/AplikacijaZaSpremljanjeStroskov.git
+
+Delo na projektu
+
+Pred začetkom dela pridobimo zadnje spremembe:
+
+git pull
+
+Izvedemo želene spremembe v kodi.
+Preverimo delovanje aplikacije.
+Dodamo spremenjene datoteke:
+
+git add .
+
+Ustvarimo commit z opisnim sporočilom:
+
+git commit -m "Opis spremembe"
+
+Spremembe prenesemo na GitHub:
+
+git push
+
+6.Standardi kodiranja.
+Pri razvoju projekta upoštevamo naslednje standarde:
+*Imena spremenljivk, metod in razredov naj bodo smiselna in razumljiva.
+*Uporabljamo enotno oblikovanje in zamikanje kode.
+*Kodo razdelimo na manjše in pregledne funkcije oziroma metode.
+*Za imena Java razredov uporabljamo zapis PascalCase.
+*Za imena Java metod in spremenljivk uporabljamo zapis camelCase.
+*Za React komponente uporabljamo zapis PascalCase.
+*CSS razrede poimenujemo opisno.
+*Komentarje uporabljamo tam, kjer pomagajo razumeti zahtevnejše dele kode.
+*Gesel in drugih občutljivih podatkov ne objavljamo v GitHub repozitoriju.
+*Pred oddajo sprememb preverimo, ali aplikacija pravilno deluje.
